@@ -16,8 +16,8 @@ COPY bot.py /app
 # Alpine's busybox has no useradd/groupadd (those are shadow-utils); use
 # addgroup/adduser instead.
 RUN mkdir -p /app/data \
-    && addgroup -S birb \
-    && adduser -S -D -H -h /app -G birb birb \
+    && addgroup -g 1000 -S birb \
+    && adduser -u 1000 -S -D -H -h /app -G birb birb \
     && chown -R birb:birb /app
 USER birb
 WORKDIR /app/data
