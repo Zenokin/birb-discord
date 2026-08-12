@@ -1,0 +1,6 @@
+.env
+.venv
+workdir
+birb.log
+birb-reminders.json
+birb-config.json

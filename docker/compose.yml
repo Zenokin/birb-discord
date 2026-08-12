@@ -1,0 +1,13 @@
+---
+services:
+  birb:
+    container_name: discord_birb
+    image: ghcr.io/zenokin/birb-discord:latest
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 100M
+    volumes:
+      - ./data/birb:/app/data
+    env_file: 'birb.env'
